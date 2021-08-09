@@ -1,0 +1,39 @@
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+<head>
+    <title>controller</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title> System Sign Up Usuari UBFLIX</title>
+</head>
+<body>
+<h1>Acceptance Criteria 4.1 System SignUp User: Login User </h1>
+<p>
+    The system shall provide system logon up function that will be used when
+    a user attempts to use the system. The user needs to provide the username
+</p>
+<div>
+    <table concordion:execute="#valid=isValidUser(#clientname, #username)">
+        <tr>
+            <th concordion:set="#clientname">Clientname</th>
+            <th concordion:set="#username">Username</th>
+            <th concordion:assertEquals="#valid">Sucess</th>
+        </tr>
+        <tr>
+            <td>Armando Jaleo</td>
+            <td>ajaleo</td>
+            <td>yes</td>
+        </tr>
+        <tr>
+            <td>Armando Jaleo</td>
+            <td>ajaleo1</td>
+            <td>no</td>
+        </tr>
+        <tr>
+            <td>ajaleo</td>
+            <td>ajaleo007</td>
+            <td>no</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,378 @@
+@startuml
+
+title __FACTORYESTUDIANTS's Class Diagram__\n
+
+  package projecteIngredients {
+    class BlackOlives {
+    }
+  }
+  
+
+  package projecteIngredients {
+    interface Cheese {
+    }
+  }
+  
+
+  package projecteInicial {
+    class CheesePizza {
+    }
+  }
+  
+
+  package projecteIngredients {
+    class CheesePizza {
+    }
+  }
+  
+
+  package projecteIngredients {
+    class ChicagoPizzaIngredientFactory {
+    }
+  }
+  
+
+  package projecteIngredients {
+    class ChicagoPizzaStore {
+    }
+  }
+  
+
+  package projecteFranquicies {
+    class ChicagoStyleCheesePizza {
+    }
+  }
+  
+
+  package projecteFranquicies {
+    class ChicagoStyleClamPizza {
+    }
+  }
+  
+
+  package projecteFranquicies {
+    class ChicagoStylePepperoniPizza {
+    }
+  }
+  
+
+  package projecteFranquicies {
+    class ChicagoStyleVeggiePizza {
+    }
+  }
+  
+
+  package projecteIngredients {
+    class ClamPizza {
+    }
+  }
+  
+
+  package projecteInicial {
+    class ClamPizza {
+    }
+  }
+  
+
+  package projecteIngredients {
+    interface Clams {
+    }
+  }
+  
+
+  package projecteFranquicies {
+    class DependentPizzaStore {
+    }
+  }
+  
+
+  package projecteIngredients {
+    interface Dough {
+    }
+  }
+  
+
+  package projecteIngredients {
+    class Eggplant {
+    }
+  }
+  
+
+  package projecteIngredients {
+    class FreshClams {
+    }
+  }
+  
+
+  package projecteIngredients {
+    class FrozenClams {
+    }
+  }
+  
+
+  package projecteIngredients {
+    class Garlic {
+    }
+  }
+  
+
+  package projecteIngredients {
+    class MarinaraSauce {
+    }
+  }
+  
+
+  package projecteIngredients {
+    class MozzarellaCheese {
+    }
+  }
+  
+
+  package projecteIngredients {
+    class Mushroom {
+    }
+  }
+  
+
+  package projecteIngredients {
+    class NYPizzaIngredientFactory {
+    }
+  }
+  
+
+  package projecteIngredients {
+    class NYPizzaStore {
+    }
+  }
+  
+
+  package projecteFranquicies {
+    class NYStyleCheesePizza {
+    }
+  }
+  
+
+  package projecteFranquicies {
+    class NYStyleClamPizza {
+    }
+  }
+  
+
+  package projecteFranquicies {
+    class NYStylePepperoniPizza {
+    }
+  }
+  
+
+  package projecteFranquicies {
+    class NYStyleVeggiePizza {
+    }
+  }
+  
+
+  package projecteIngredients {
+    class Onion {
+    }
+  }
+  
+
+  package projecteIngredients {
+    class ParmesanCheese {
+    }
+  }
+  
+
+  package projecteIngredients {
+    interface Pepperoni {
+    }
+  }
+  
+
+  package projecteIngredients {
+    class PepperoniPizza {
+    }
+  }
+  
+
+  package projecteInicial {
+    class PepperoniPizza {
+    }
+  }
+  
+
+  package projecteIngredients {
+    abstract class Pizza {
+    }
+  }
+  
+
+  package projecteFranquicies {
+    abstract class Pizza {
+    }
+  }
+  
+
+  package projecteInicial {
+    abstract class Pizza {
+    }
+  }
+  
+
+  package projecteIngredients {
+    interface PizzaIngredientFactory {
+    }
+  }
+  
+
+  package projecteIngredients {
+    abstract class PizzaStore {
+    }
+  }
+  
+
+  package projecteInicial {
+    class PizzaStore {
+    }
+  }
+  
+
+  package projecteInicial {
+    class PizzaTestDrive {
+    }
+  }
+  
+
+  package projecteIngredients {
+    class PizzaTestDrive {
+    }
+  }
+  
+
+  package projecteFranquicies {
+    class PizzaTestDrive {
+    }
+  }
+  
+
+  package projecteIngredients {
+    class PlumTomatoSauce {
+    }
+  }
+  
+
+  package projecteIngredients {
+    class RedPepper {
+    }
+  }
+  
+
+  package projecteIngredients {
+    class ReggianoCheese {
+    }
+  }
+  
+
+  package projecteIngredients {
+    interface Sauce {
+    }
+  }
+  
+
+  package projecteIngredients {
+    class SlicedPepperoni {
+    }
+  }
+  
+
+  package projecteIngredients {
+    class Spinach {
+    }
+  }
+  
+
+  package projecteIngredients {
+    class ThickCrustDough {
+    }
+  }
+  
+
+  package projecteIngredients {
+    class ThinCrustDough {
+    }
+  }
+  
+
+  package projecteIngredients {
+    class VeggiePizza {
+    }
+  }
+  
+
+  package projecteInicial {
+    class VeggiePizza {
+    }
+  }
+  
+
+  package projecteIngredients {
+    interface Veggies {
+    }
+  }
+  
+
+  BlackOlives -up-|> Veggies
+  CheesePizza -up-|> Pizza
+  CheesePizza -up-|> Pizza
+  CheesePizza o-- PizzaIngredientFactory : ingredientFactory
+  ChicagoPizzaIngredientFactory -up-|> PizzaIngredientFactory
+  ChicagoPizzaStore -up-|> PizzaStore
+  ChicagoStyleCheesePizza -up-|> Pizza
+  ChicagoStyleClamPizza -up-|> Pizza
+  ChicagoStylePepperoniPizza -up-|> Pizza
+  ChicagoStyleVeggiePizza -up-|> Pizza
+  ClamPizza -up-|> Pizza
+  ClamPizza o-- PizzaIngredientFactory : ingredientFactory
+  ClamPizza -up-|> Pizza
+  Eggplant -up-|> Veggies
+  FreshClams -up-|> Clams
+  FrozenClams -up-|> Clams
+  Garlic -up-|> Veggies
+  MarinaraSauce -up-|> Sauce
+  MozzarellaCheese -up-|> Cheese
+  Mushroom -up-|> Veggies
+  NYPizzaIngredientFactory -up-|> PizzaIngredientFactory
+  NYPizzaStore -up-|> PizzaStore
+  NYStyleCheesePizza -up-|> Pizza
+  NYStyleClamPizza -up-|> Pizza
+  NYStylePepperoniPizza -up-|> Pizza
+  NYStyleVeggiePizza -up-|> Pizza
+  Onion -up-|> Veggies
+  ParmesanCheese -up-|> Cheese
+  PepperoniPizza -up-|> Pizza
+  PepperoniPizza o-- PizzaIngredientFactory : ingredientFactory
+  PepperoniPizza -up-|> Pizza
+  Pizza o-- Dough : dough
+  Pizza o-- Sauce : sauce
+  Pizza o-- Cheese : cheese
+  Pizza o-- Pepperoni : pepperoni
+  Pizza o-- Clams : clam
+  PlumTomatoSauce -up-|> Sauce
+  RedPepper -up-|> Veggies
+  ReggianoCheese -up-|> Cheese
+  SlicedPepperoni -up-|> Pepperoni
+  Spinach -up-|> Veggies
+  ThickCrustDough -up-|> Dough
+  ThinCrustDough -up-|> Dough
+  VeggiePizza -up-|> Pizza
+  VeggiePizza o-- PizzaIngredientFactory : ingredientFactory
+  VeggiePizza -up-|> Pizza
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

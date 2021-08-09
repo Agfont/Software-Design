@@ -1,0 +1,63 @@
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+<head>
+    <title>controller</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>System Login UBFLIX</title>
+</head>
+<body>
+<h1>Acceptance Criteria 1.1 System Login User: verify password</h1>
+<p>
+    The system shall provide system logon function that will be used when
+    a user attempts to use the system. The user needs to provide credentials
+    in a form of username and password pair.
+</p>
+<div>
+    <table concordion:execute="#valid=isValidLogin(#username, #password)">
+        <tr>
+            <th concordion:set="#username">Username</th>
+            <th concordion:set="#password">Password</th>
+            <th concordion:assertEquals="#valid">Sucess</th>
+        </tr>
+        <tr>
+            <td>Armando Jaleo</td>
+            <td>ajaleo</td>
+            <td>yes</td>
+        </tr>
+        <tr>
+            <td>Armando Jaleo</td>
+            <td>ajaleoWrong</td>
+            <td>no</td>
+        </tr>
+        <tr>
+            <td>Lola Mento</td>
+            <td>lmento</td>
+            <td>yes</td>
+        </tr>
+    </table>
+</div>
+
+<h1>Acceptance Criteria 1.2 System Login User: Validate username </h1>
+<p>
+    The system shall provide system logon function that will be used when
+    a user attempts to use the system. The user needs to provide credentials
+    in a form of username and password pair.
+</p>
+<div>
+    <table concordion:execute="#valid=isValidClient(#username)">
+        <tr>
+            <th concordion:set="#username">Username</th>
+            <th concordion:assertEquals="#valid">Sucess</th>
+        </tr>
+        <tr>
+            <td>Armando Jaleo</td>
+            <td>Valid Client</td>
+        </tr>
+        <tr>
+            <td>Henri</td>
+            <td>Client Unknown</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

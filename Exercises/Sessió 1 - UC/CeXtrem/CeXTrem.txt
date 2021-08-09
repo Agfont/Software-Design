@@ -1,0 +1,64 @@
+@startuml
+left to right direction
+skinparam packageStyle rect 
+
+title Un diagrama de casos d'ús per a CeXtrem
+
+
+rectangle CeXtrem {
+
+usecase (UC1. Sign UP) as UC1
+usecase (UC2. Sign IN) as UC2
+usecase (UC3. Reservar Excursio) as UC3
+usecase (UC4. Cercar Excursions ) as UC4
+usecase (UC4.1 Cercar Excursions Per Activitat ) as UC41
+usecase (UC4.2 Cercar Excursions Per Localitat) as UC42
+usecase (UC4.3 Cercar Excursions Per Especie) as UC43
+usecase (UC4.4 Cercar Excursions Per Temps) as UC44
+usecase (UC5. Sign UP Grup) as UC5
+usecase (UC6. Reservar Excursio Grup) as UC6
+usecase (UC7. Visualitzar Excursio) as UC7
+usecase (UC8. Visualitzar Llista Excursions) as UC8
+}
+
+actor Usuari as usuari
+actor Soci as soci
+actor Monitor as monitor
+actor Temps as temps  
+
+usuari -- UC1
+
+soci -- UC2
+
+soci <|-- monitor
+
+UC5 .> UC1 : <<include>>
+
+
+soci -- UC3
+
+soci -- UC7
+soci -- UC8
+UC8 .> UC7 : <<include>>
+
+monitor -- UC5
+monitor -- UC6
+
+
+UC6 .> UC3 : <<include>>
+soci - UC4
+
+
+UC4 <|-- UC41
+UC4 <|-- UC42
+UC4 <|-- UC43
+UC4 <|-- UC44
+
+UC7 .> UC4 : <<extends>>
+UC7 .> UC3 : <<extends>>
+
+
+temps - UC44
+@enduml
+
+

@@ -1,0 +1,204 @@
+@startuml
+
+title __VIEW's Class Diagram__\n
+
+  namespace ub.edu.view {
+    class ub.edu.view.AppUBFLIX {
+        {static} ~ control : Controller
+        {static} + getControl()
+        {static} + main()
+    }
+  }
+  
+
+  namespace ub.edu.view {
+    class ub.edu.view.FormEpisodi {
+        - descripcioEpisodi : JLabel
+        - duracioEpisodi : JLabel
+        - jpanel : JPanel
+        - titolEpisodi : JLabel
+        - tornarAlMenuButton : JButton
+        - valorarButton : JButton
+        - visualitzarButton : JButton
+        # FormEpisodi()
+        - estaValorat()
+        - initComponents()
+        - onVisualitzar()
+    }
+  }
+  
+
+  namespace ub.edu.view {
+    class ub.edu.view.FormReproduccio {
+        - actionListener : ActionListener
+        - duracioVisualitzacio : int
+        - duracioVisualitzada : int
+        - episodi : String
+        - jPanel : JPanel
+        - numTemporada : int
+        - progressBar : JProgressBar
+        - serie : String
+        - timer : Timer
+        # FormReproduccio()
+        - formWindowClosing()
+        - formWindowOpened()
+        - initComponents()
+    }
+  }
+  
+
+  namespace ub.edu.view {
+    class ub.edu.view.FormUser {
+        - buttonCancel : JButton
+        - buttonOK : JButton
+        - contentPane : JPanel
+        - textFieldUsername : JTextField
+        - usernameLabel : JLabel
+        + FormUser()
+        - initComponents()
+        - onCancel()
+        - onRegister()
+    }
+  }
+  
+
+  namespace ub.edu.view {
+    class ub.edu.view.FrmLogIn {
+        - btnLogIn : JButton
+        - btnRegistrar : JButton
+        - buttonCancel : JButton
+        - contentPane : JPanel
+        - labelPassword : JLabel
+        - labelUsername : JLabel
+        - textPassword : JPasswordField
+        - textUsername : JTextField
+        # FrmLogIn()
+        - initComponents()
+        - logIN_Wrong()
+        - onCancel()
+        - onOK()
+        - onRegistrar()
+    }
+  }
+  
+
+  namespace ub.edu.view {
+    class ub.edu.view.FrmRegistre {
+        - buttonCancel : JButton
+        - buttonOK : JButton
+        - contentPane : JPanel
+        - labelAdreca : JLabel
+        - labelDNI : JLabel
+        - labelNomReal : JLabel
+        - labelPassword1 : JLabel
+        - labelPassword2 : JLabel
+        - labelUsername : JLabel
+        - textAdreca : JTextField
+        - textDNI : JTextField
+        - textNomReal : JTextField
+        - textPassword1 : JPasswordField
+        - textPassword2 : JPasswordField
+        - textUsername : JTextField
+        # FrmRegistre()
+        - initComponents()
+        - onCancel()
+        - onOK()
+    }
+  }
+  
+
+  namespace ub.edu.view {
+    class ub.edu.view.FrmValoracio {
+        - barraEmocio : JSlider
+        - btnDOWN : JButton
+        - btnEscollir : JButton
+        - btnMarcar : JButton
+        - btnUP : JButton
+        - btnValorar : JButton
+        - buttonCancel : JButton
+        - buttonGroup : ButtonGroup
+        - contentPane : JPanel
+        - emocioRadioButton : JRadioButton
+        - panelEmocio : JPanel
+        - panelPolze : JPanel
+        - polzeRadioButton : JRadioButton
+        # FrmValoracio()
+        - confirmacioContinuarValoracio()
+        - groupButton()
+        - inici()
+        - initComponents()
+        - onCancel()
+        - onValorar()
+    }
+  }
+  
+
+  namespace ub.edu.view {
+    class ub.edu.view.UBFLIX {
+        - btnAfegirMyList : JButton
+        - btnCrearUsuari : JButton
+        - btnTancarSessio : JButton
+        - comboBoxValorar : JComboBox
+        - fieldAll : JPanel
+        - fieldNotStarted : JPanel
+        - fieldWatchNext : JPanel
+        - fieldWatched : JPanel
+        - jPanel : JPanel
+        - labelTopValoracions : JLabel
+        - labelTopVisualitzacions : JLabel
+        - listAll : JList
+        - listContinueWatching : JList
+        - listMyList : JList
+        - listWatched : JList
+        - llistes : JTabbedPane
+        - popupMenuTemporades : HashMap<String, JPopupMenu>
+        - tableModelVal : DefaultTableModel
+        - tableModelVis : DefaultTableModel
+        - tableTopValoracions : JTable
+        - tableTopVisualitzacions : JTable
+        + UBFLIX()
+        - ferLogIn()
+        - formWindowClosing()
+        - formWindowOpened()
+        - inicialitzarLlistaTopValoracions()
+        - inicialitzarLlistaTopVisualitzacions()
+        - initComponents()
+        - mostrarPopupMenuTemporades()
+        - mostrarTemporades()
+        - onEpisodi()
+        - refreshContinueWatching()
+        - refreshEpisodis()
+        - refreshListAll()
+        - refreshLlistes()
+        - refreshMyList()
+        - refreshTemporades()
+        - refreshTopValoracions()
+        - refreshTopVisualitzacions()
+        - refreshWatched()
+        - userActionPerformed()
+    }
+  }
+  
+
+  ub.edu.view.FormEpisodi -up-|> javax.swing.JDialog
+  ub.edu.view.FormEpisodi o-- ub.edu.controller.Controller : controler
+  ub.edu.view.FormReproduccio -up-|> javax.swing.JDialog
+  ub.edu.view.FormUser -up-|> javax.swing.JDialog
+  ub.edu.view.FrmLogIn -up-|> javax.swing.JDialog
+  ub.edu.view.FrmLogIn o-- ub.edu.controller.Controller : controler
+  ub.edu.view.FrmRegistre -up-|> javax.swing.JDialog
+  ub.edu.view.FrmRegistre o-- ub.edu.controller.Controller : controler
+  ub.edu.view.FrmValoracio -up-|> javax.swing.JDialog
+  ub.edu.view.FrmValoracio o-- ub.edu.controller.Controller : controler
+  ub.edu.view.UBFLIX -up-|> javax.swing.JFrame
+  ub.edu.view.UBFLIX o-- ub.edu.controller.Controller : controler
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

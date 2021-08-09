@@ -1,0 +1,267 @@
+@startuml
+
+title __TEST_MOCK_UBFLIX's Class Diagram__\n
+
+  namespace ub.edu.controller {
+    class ub.edu.controller.Controller {
+    }
+  }
+  
+
+  namespace ub.edu.model {
+    class ub.edu.model.Actor {
+    }
+  }
+  
+
+  namespace ub.edu.model {
+    class ub.edu.model.Adreça {
+    }
+  }
+  
+
+  namespace ub.edu.model {
+    abstract class ub.edu.model.Artist {
+    }
+  }
+  
+
+  namespace ub.edu.model {
+    class ub.edu.model.CarteraClients {
+    }
+  }
+  
+
+  namespace ub.edu.model {
+    class ub.edu.model.CatalegSeries {
+    }
+  }
+  
+
+  namespace ub.edu.model {
+    class ub.edu.model.Client {
+    }
+  }
+  
+
+  namespace ub.edu.model {
+    class ub.edu.model.DataEpisodi {
+    }
+  }
+  
+
+  namespace ub.edu.model {
+    class ub.edu.model.Director {
+    }
+  }
+  
+
+  namespace ub.edu.model {
+    class ub.edu.model.DurationEpisodi {
+    }
+  }
+  
+
+  namespace ub.edu.model {
+    class ub.edu.model.Episodi {
+    }
+  }
+  
+
+  namespace ub.edu.model {
+    abstract class ub.edu.model.Estat {
+    }
+  }
+  
+
+  namespace ub.edu.model {
+    class ub.edu.model.EstatEnReproduccio {
+    }
+  }
+  
+
+  namespace ub.edu.model {
+    class ub.edu.model.EstatVist {
+    }
+  }
+  
+
+  namespace ub.edu.model {
+    class ub.edu.model.Productora {
+    }
+  }
+  
+
+  namespace ub.edu.model {
+    class ub.edu.model.Serie {
+    }
+  }
+  
+
+  namespace ub.edu.model {
+    class ub.edu.model.Tematica {
+    }
+  }
+  
+
+  namespace ub.edu.model {
+    class ub.edu.model.Temporada {
+    }
+  }
+  
+
+  namespace ub.edu.model {
+    class ub.edu.model.Usuari {
+    }
+  }
+  
+
+  namespace ub.edu.model {
+    class ub.edu.model.VisualitzacioEpisodi {
+    }
+  }
+  
+
+  namespace ub.edu.resources.dao {
+    interface ub.edu.resources.dao.DAO {
+    }
+  }
+  
+
+  namespace ub.edu.resources.dao {
+    interface ub.edu.resources.dao.DAOArtist {
+    }
+  }
+  
+
+  namespace ub.edu.resources.dao {
+    interface ub.edu.resources.dao.DAOClient {
+    }
+  }
+  
+
+  namespace ub.edu.resources.dao {
+    interface ub.edu.resources.dao.DAOEpisodi {
+    }
+  }
+  
+
+  namespace ub.edu.resources.dao {
+    interface ub.edu.resources.dao.DAOSerie {
+    }
+  }
+  
+
+  namespace ub.edu.resources.dao {
+    interface ub.edu.resources.dao.DAOTemporada {
+    }
+  }
+  
+
+  namespace ub.edu.resources.dao {
+    interface ub.edu.resources.dao.DAOUsuari {
+    }
+  }
+  
+
+  namespace ub.edu.resources.dao {
+    namespace MOCK {
+      class ub.edu.resources.dao.MOCK.DAOArtistMOCK {
+      }
+    }
+  }
+  
+
+  namespace ub.edu.resources.dao {
+    namespace MOCK {
+      class ub.edu.resources.dao.MOCK.DAOClientMOCK {
+      }
+    }
+  }
+  
+
+  namespace ub.edu.resources.dao {
+    namespace MOCK {
+      class ub.edu.resources.dao.MOCK.DAOEpisodiMOCK {
+      }
+    }
+  }
+  
+
+  namespace ub.edu.resources.dao {
+    namespace MOCK {
+      class ub.edu.resources.dao.MOCK.DAOSerieMOCK {
+      }
+    }
+  }
+  
+
+  namespace ub.edu.resources.dao {
+    namespace MOCK {
+      class ub.edu.resources.dao.MOCK.DAOTemporadaMOCK {
+      }
+    }
+  }
+  
+
+  namespace ub.edu.resources.dao {
+    namespace MOCK {
+      class ub.edu.resources.dao.MOCK.DAOUsuariMOCK {
+      }
+    }
+  }
+  
+
+  namespace ub.edu.resources.service {
+    interface ub.edu.resources.service.AbstractFactoryData {
+    }
+  }
+  
+
+  namespace ub.edu.resources.service {
+    class ub.edu.resources.service.DataService {
+    }
+  }
+  
+
+  namespace ub.edu.resources.service {
+    class ub.edu.resources.service.FactoryMOCK {
+    }
+  }
+  
+
+  ub.edu.controller.Controller o-- ub.edu.model.CarteraClients : carteraClients
+  ub.edu.controller.Controller o-- ub.edu.model.CatalegSeries : catalegSeries
+  ub.edu.controller.Controller o-- ub.edu.resources.service.DataService : dataService
+  ub.edu.controller.Controller o-- ub.edu.resources.service.AbstractFactoryData : factory
+  ub.edu.model.Actor -up-|> ub.edu.model.Artist
+  ub.edu.model.Director -up-|> ub.edu.model.Artist
+  ub.edu.model.Episodi o-- ub.edu.model.DataEpisodi : data
+  ub.edu.model.Episodi o-- ub.edu.model.DurationEpisodi : duration
+  ub.edu.model.EstatEnReproduccio -up-|> ub.edu.model.Estat
+  ub.edu.model.EstatEnReproduccio o-- ub.edu.model.DurationEpisodi : tempsVist
+  ub.edu.model.EstatVist -up-|> ub.edu.model.Estat
+  ub.edu.model.Serie o-- ub.edu.model.Productora : productora
+  ub.edu.resources.dao.MOCK.DAOArtistMOCK .up.|> ub.edu.resources.dao.DAOArtist
+  ub.edu.resources.dao.MOCK.DAOClientMOCK .up.|> ub.edu.resources.dao.DAOClient
+  ub.edu.resources.dao.MOCK.DAOEpisodiMOCK .up.|> ub.edu.resources.dao.DAOEpisodi
+  ub.edu.resources.dao.MOCK.DAOSerieMOCK .up.|> ub.edu.resources.dao.DAOSerie
+  ub.edu.resources.dao.MOCK.DAOTemporadaMOCK .up.|> ub.edu.resources.dao.DAOTemporada
+  ub.edu.resources.dao.MOCK.DAOUsuariMOCK .up.|> ub.edu.resources.dao.DAOUsuari
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAOArtist : artistDAO
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAOClient : clientDAO
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAOEpisodi : episodiDAO
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAOSerie : serieDAO
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAOTemporada : temporadaDAO
+  ub.edu.resources.service.DataService o-- ub.edu.resources.dao.DAOUsuari : usariDAO
+  ub.edu.resources.service.FactoryMOCK .up.|> ub.edu.resources.service.AbstractFactoryData
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

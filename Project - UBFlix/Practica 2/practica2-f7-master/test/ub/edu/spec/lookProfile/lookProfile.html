@@ -1,0 +1,31 @@
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+<head>
+    <title>controller</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>System Look Profile UBFLIX</title>
+</head>
+<body>
+<h1>Acceptance Criteria 5.1 System Look Profile: get profile information</h1>
+<p>
+    The system shall provide system explore function that will be used when
+    a user attempts to see their profile. The user needs to be logged in.
+</p>
+<div>
+    <table concordion:execute="#valid=informationProfile(#username)">
+        <tr>
+            <th concordion:set="#username">Username</th>
+            <th concordion:assertEquals="#valid">Sucess</th>
+        </tr>
+        <tr>
+            <td>Armando Jaleo</td>
+            <td>Name: Armando Jaleo Pass: ajaleo Usuaris: [Nom: ajaleo] DNI: 11111111A Adreça: Madrigal 8, 00001, Barcelona</td>
+        </tr>
+        <tr>
+            <td>Pep</td>
+            <td>Client Unknown</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

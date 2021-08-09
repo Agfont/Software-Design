@@ -1,0 +1,142 @@
+@startuml
+
+object UBFlix
+
+object CarteraClients
+
+object Serie{
+titulo
+año primera emision
+descripción
+tematica
+}
+
+object Cliente{
+nombre
+clave
+email
+movil
+}
+
+object Direccion_Cliente{
+calle
+numero
+codigo postal
+ciudad
+}
+
+object Usuario{
+nombre
+}
+
+object Icono
+
+object Catalogo
+
+object Portada
+
+
+object Personaje{
+nombre
+}
+
+object Actor{
+nombre
+}
+
+object Productora{
+nombre
+id
+año de creación
+}
+
+object Director{
+nombre
+nacionalitat
+}
+
+object Temporada{
+numero_Temporadas
+numero_Episodios
+}
+
+object Episodio{
+nombre
+duracion
+idioma original
+descripcion
+valoracion media
+}
+
+object Fecha_Episodio
+
+object Visualizacion_Episodio
+
+object Estado
+
+object Visto
+
+object No_visto
+
+object En_reproduccion
+
+object Valoracion
+
+object Valoracion_Thumb
+
+object Valoracion_Estrella
+
+object Fecha_Visualizacion
+
+
+object Duracion{
+horas
+minutos
+segundos
+}
+
+
+object Fecha
+
+
+Fecha<|-Fecha_Episodio
+Fecha<|-Fecha_Visualizacion
+
+UBFlix "1" -right- "1" Catalogo: dispone
+Catalogo "1"-right-"1" Serie: está compuesto
+
+Serie "1" -up- "1" Portada: tiene
+Serie "1" -down- "1...*" Temporada: dispone
+Serie "1..*" -- "1...*" Personaje: actúan
+Serie "1..*" -right- "1" Director: es dirigida
+Serie "1..*" -- "1" Productora: es producida
+
+Personaje "1..*"--"1..*" Actor: actua
+
+Temporada "1"-down-"1..*" Episodio: está compuesta
+Episodio "1..*"-right-"1" Duracion: dura
+Episodio "1..*"-down-"1"Fecha_Episodio: fue emitida
+
+
+UBFlix "1" -down- "1" CarteraClients: registra
+CarteraClients "1" -down- "1...*" Cliente: registra
+Cliente "1"-right- "1" Direccion_Cliente: reside
+Cliente "1" -down- "1...5" Usuario: está compuesto
+Usuario "1"-left- "1" Icono:tiene
+Usuario "1..*"-right-"1..*"Visualizacion_Episodio: visualiza
+
+Visualizacion_Episodio "1"-right-"1"Episodio: se refiere
+Visualizacion_Episodio "1..*"-right- "1"Fecha_Visualizacion:fue visualizado
+Visualizacion_Episodio "1..*"-left- "1" Valoracion: valora
+Visualizacion_Episodio "1..*" -down- "1" Estado: está
+
+Estado <|-Visto
+Estado <|-En_reproduccion
+Estado <|-No_visto
+
+Valoracion <|- Valoracion_Thumb
+Valoracion <|- Valoracion_Estrella
+
+
+@enduml
+

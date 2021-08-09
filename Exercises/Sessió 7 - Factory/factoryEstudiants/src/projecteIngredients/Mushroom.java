@@ -1,0 +1,8 @@
+package projecteIngredients;
+
+public class Mushroom implements Veggies {
+
+	public String toString() {
+		return "Mushrooms";
+	}
+}

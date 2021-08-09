@@ -1,0 +1,47 @@
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+<head>
+    <title>controller</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title> Marcar Serie en UBFLIX</title>
+</head>
+<body>
+<h1>Acceptance Criteria 8.1: marcar Serie</h1>
+<p>
+    El sistema marcará la serie que se le pase por parametros en el usuario que se le pase.
+</p>
+<div>
+    <table concordion:execute="#valid=marcarSerieMyList(#clientName, #userName, #idSerie)">
+        <tr>
+            <th concordion:set="#clientName">ClientName</th>
+            <th concordion:set="#userName">UserName</th>
+            <th concordion:set="#idSerie">IdSerie</th>
+            <th concordion:assertEquals="#valid">Sucess</th>
+        </tr>
+        <tr>
+            <td>Armando Jaleo</td>
+            <td>ajaleo</td>
+            <td>bbad</td>
+            <td>yes</td>
+        </tr>
+        <tr>
+            <td>Armando Jaleo0</td>
+            <td>ajaleo</td>
+            <td>bbad</td>
+            <td>no</td>
+        </tr>
+        <tr>
+            <td>Lola Mento</td>
+            <td>lmento0</td>
+            <td>bbad</td>
+            <td>no</td>
+        </tr>
+        <tr>
+            <td>Lola Mento</td>
+            <td>lmento</td>
+            <td>Bbad</td>
+            <td>no</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

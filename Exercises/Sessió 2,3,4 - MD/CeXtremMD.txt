@@ -1,0 +1,112 @@
+
+@startuml
+skinparam classAttributeIconSize 0
+title Classes - Model Domain Diagram
+
+Activitat <|-- Risc
+Persona <|-- Monitor
+Persona <|-- Soci
+Especie <|-- Animal
+Especie <|-- Vegetal
+
+Grup "*" --- "*" Soci: te
+Monitor "1" --- "*" Grup: guia
+
+CentreExcursionista "1" --- "*" Soci: estan_apuntats
+CentreExcursionista "1"--- "*" Excursio : realitza
+CentreExcursionista "1"--- "*" EspecificacioExcursio : ofereix
+
+Excursio "1"---"*" Soci: inscriu
+EspecificacioExcursio "1" --- "1" Lloc : parteix
+EspecificacioExcursio "1" --- "1" Lloc : finalitza
+
+
+EspecificacioExcursio "1" -- "*" Excursio : descriu
+EspecificacioExcursio "1" -- "*" Activitat : es_realitzen
+
+EspecificacioExcursio "1" -- "1" Itinerari : fa
+
+Excursio "1"---"*" Activitat: ofereix
+Itinerari o-- Lloc : passa_per
+
+EspecificacioActivitat "1" --- "*" Activitat: descriu
+EspecificacioExcursio "1" --- "*" EspecificacioActivitat: conte
+
+
+Soci "1" -- "1..*" Activitat : participen
+Soci "1" -- "2" CompteBancaria : poseeix
+
+Persona "1" -- "1" Direccio : resideix
+
+Lloc "1..*" -- "1" ZonaGeografica : pertanyen
+
+ZonaGeografica "1" -- "1..*" Especie : existeixen
+
+Monitor "1" --- "*" Risc : controla
+
+class CentreExcursionista
+class Persona{
++ nom : String
++ cognom: String
++ data_neix: Date
+- dni: String
+}
+class Monitor{
+- num_monitor: int
+}
+class Direccio{
++ carrer: String
++ poblacio: String
++ codi_postal: String
+}
+class Soci{
+- num_soci: int
+}
+class EspecificacioExcursio {
+- id_Excursio: int
++ preu: float
++ num_max: int
+}
+class Excursio{
+- id_Excursio: int
++ data: Date
+}
+class Itinerari {
+- id_Iinerari: int
++ kms: float
++ temps: float
++ desnivell: float
+}
+class Lloc{
+- idLloc: int
++ altitud: String
++ latitud: float
++ longitud: float
+}
+class ZonaGeografica{
++ nom: String
+- id_zona: int
+}
+class CompteBancaria{
+- num_id: int
+- entitat: String
+- oficina: String
+- num_entitat: String
+}
+class EspecificacioActivitat{
++ nom : String
+- id_act: int
++ preu: float
+}
+class Activitat{
+- id_act: int
+}
+class Especie{
++ nom: String
+}
+class Risc{
++ edat_min: int
+}
+class Animal
+class Vegetal
+@enduml

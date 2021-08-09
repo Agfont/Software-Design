@@ -1,0 +1,38 @@
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+<head>
+    <title>controller</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title> System Sign Up Usuari UBFLIX</title>
+</head>
+<body>
+<h1>Acceptance Criteria 7.1 System SignUp User: Show one serie </h1>
+<p>
+    The system shall show the details of the serie that the user want
+</p>
+<div>
+    <p>Searching for "<b concordion:set="#idSerie">bbad</b>" will return:</p>
+    <table concordion:verify-rows="#dato : detallsSerie(#idSerie)">
+        <tr>
+            <th concordion:assert-equals="#dato">Detall de la Serie</th>
+            <th concordion:set="#idSerie">idSerie</th>
+        </tr>
+        <tr>
+            <td>Breaking Bad</td>
+        </tr>
+        <tr>
+            <td>Tras cumplir 50 aׯs, Walter White (Bryan Cranston), un profesor de quӭica de un instituto de Albuquerque, Nuevo Mϸico, se entera de que tiene un cȮcer de pulmخ incurable. Casado con Skyler (Anna Gunn) y con un hijo discapacitado (RJ Mitte), la brutal noticia lo impulsa a dar un drȳtico cambio a su vida: decide, con la ayuda de un antiguo alumno (Aaron Paul), fabricar anfetaminas y ponerlas a la venta. Lo que pretende es liberar a su familia de problemas econحicos cuando se produzca el fatal desenlace</td>
+        </tr>
+        <tr>
+            <td>[Director: V.Gilligan Nacionalitat: EEUU, Actor: B.Cranston Nacionalitat: EEUU, Actor: A.Paul Nacionalitat: EEUU, Actor: D.Norris Nacionalitat: EEUU]</td>
+        </tr>
+        <tr>
+            <td>Productora: AMC:Gran_Via_Productions</td>
+        </tr>
+        <tr>
+            <td>[Temporada 1:  Episodis [1]: [Titol: Piloto Descripcio: Walter White, era un famoso investigador quӭico de un prestigioso Laboratorio del Gobierno, que a dӡ de hoy ha sido relegado a enseסr a apȴicos estudiantes de un Instituto en Albuquerque. Para poder llegar a fin de mes tambiϮ tiene un trabajo a media jornada en un lavadero de coches. Ademȳ, Ϭ y su esposa, Skyler, una mujer que se ha forjado una modesta carrera en la compra-venta de artӣulos por eBay, estȮ criando a Walter, Jr., un joven de diecisiete años, con una gran fuerza de voluntad, que tiene parȬisis cerebral lo que presenta un continuo reto para la familia. Pero todas estas dificultades palidecen en relaciخ con el nuevo descubrimiento de Walter: tiene cȮcer con un pronسtico de dos años de vida. Idioma: VOSE Valoració mitja: 0 Duracio: 55:0:0]]</td>
+        </tr>
+
+    </table>
+</div>
+</body>
+</html>
